@@ -21,9 +21,13 @@ namespace HelloWorld
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Models.User user = new Models.User();
+
+
         public MainWindow()
         {
             InitializeComponent();
+            uxContainer.DataContext = user;
         }
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)

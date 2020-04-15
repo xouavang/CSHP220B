@@ -8,11 +8,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
+        <StackPanel x:Name="uxContainer">
             <TextBlock>Enter Name:</TextBlock>
-            <TextBox x:Name="uxName"></TextBox>
+            <TextBox x:Name="uxName" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+            <Label x:Name="uxNameError" Content="{Binding NameError, UpdateSourceTrigger=PropertyChanged}"/>
+
             <TextBlock>Enter Password:</TextBlock>
-            <TextBox x:Name="uxPassword"></TextBox>
+            <TextBox x:Name="uxPassword" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+            <Label x:Name="uxPasswordError" Content="{Binding PasswordError, UpdateSourceTrigger=PropertyChanged}"/>
+            
             <Button x:Name="uxSubmit" Click="uxSubmit_Click" Content="Submit">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -33,6 +37,14 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+            </Button>
+            <Button>
+                <StackPanel>
+                    <CheckBox>
+                        Check Me
+                    </CheckBox>
+                    <CheckBox Content="Check Other"/>
+                </StackPanel>
             </Button>
         </StackPanel>
     </Grid>
