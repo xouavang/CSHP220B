@@ -137,5 +137,10 @@ namespace HelloWorld.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
