@@ -23,9 +23,11 @@
 
             <TextBlock Grid.Row="0" Text="User Name:" />
             <TextBox Grid.Row="1" Text="{Binding UserName}"  />
-            <TextBlock Grid.Row="2" Text="Password:" Background="AliceBlue" />
+            
+            <TextBlock Grid.Row="2" Text="Password:"/>
             <TextBox Grid.Row="3" Text="{Binding UserPassword}"/>
-            <TextBlock Grid.Row="4" Text="Age:" Background="AliceBlue" />
+            
+            <TextBlock Grid.Row="4" Text="Age:"/>
             <TextBox Grid.Row="5" Text="{Binding UserAge}"/>
         </Grid>
     </StackPanel>
