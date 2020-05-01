@@ -25,7 +25,8 @@ namespace HelloWorld
 
         private void uxLocal_Checked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Local Checked");
+            var msg = Application.Current.FindResource("LocalChecked").ToString();
+            MessageBox.Show(msg);
         }
         private void uxLocal_Unchecked(object sender, RoutedEventArgs e)
         {
