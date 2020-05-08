@@ -42,6 +42,7 @@ namespace ContactRepository
 
         public List<ContactModel> GetAll()
         {
+            // DatabaseManager.Instance.Contact gets all the contacts from the database as database models.
             // Use .Select() to map the database contacts to ContactModel
             var items = DatabaseManager.Instance.Contact
               .Select(t => new ContactModel

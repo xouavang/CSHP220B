@@ -8,7 +8,49 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <Menu>
-            <MenuItem x:Name="File" Header="_File" Click="File_Click"></MenuItem>
+            <MenuItem x:Name="File" Header="_File">
+                <MenuItem x:Name="uxFileNew" Header="_New" Click="uxFileNew_Click"/>
+                <MenuItem x:Name="uxFileDelete" Header="_Delete" Click="uxFileDelete_Click" Loaded="uxFileDelete_Loaded" />
+                <MenuItem x:Name="uxFileChange" Header="_Modify" Click="uxFileChange_Click" Loaded="uxFileChange_Loaded" />
+            </MenuItem>
         </Menu>
+        <ListView x:Name="uxContactList" Height="200" SelectionChanged="uxContactList_SelectionChanged">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="uxContextFileNew" Header="_New" Click="uxFileNew_Click"/>
+                    <MenuItem x:Name="uxContextFileChange" Header="_Modify" Click="uxFileChange_Click" />
+                    <MenuItem x:Name="uxContextFileDelete" Header="_Delete" Click="uxFileDelete_Click" Loaded="uxFileDelete_Loaded"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="100">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Name" Click="uxContactListColumnHeader_Click">Name</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Email}" Width="100">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Email" Click="uxContactListColumnHeader_Click">Email</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PhoneType}" Width="100">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Phone Type" Click="uxContactListColumnHeader_Click">Phone Type</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PhoneNumber}" Width="100">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Phone Number" Click="uxContactListColumnHeader_Click">Phone Number</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Age}" Width="100">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Age" Click="uxContactListColumnHeader_Click">Age</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </StackPanel>
 </Window>
