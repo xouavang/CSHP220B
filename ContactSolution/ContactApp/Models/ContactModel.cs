@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AutoMapper;
 
 namespace ContactApp.Models
 {
     public class ContactModel
     {
+        private static MapperConfiguration config = new MapperConfiguration(cfg => cfg.CreateMap<ContactModel, ContactRepository.ContactModel>().ReverseMap());
+        private static IMapper mapper = config.CreateMapper();
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
@@ -15,38 +19,19 @@ namespace ContactApp.Models
         public string Notes { get; set; }
         public DateTime CreatedDate { get; set; }
 
+        public ContactModel Clone()
+        {
+            return (ContactModel)this.MemberwiseClone();
+        }
+
         public ContactRepository.ContactModel ToRepositoryModel()
         {
-            var repositoryModel = new ContactRepository.ContactModel
-            {
-                Age = Age,
-                CreatedDate = CreatedDate,
-                Email = Email,
-                Id = Id,
-                Name = Name,
-                Notes = Notes,
-                PhoneNumber = PhoneNumber,
-                PhoneType = PhoneType
-            };
-
-            return repositoryModel;
+            return mapper.Map<ContactRepository.ContactModel>(this);
         }
 
         public static ContactModel ToModel(ContactRepository.ContactModel respositoryModel)
         {
-            var contactModel = new ContactModel
-            {
-                Age = respositoryModel.Age,
-                CreatedDate = respositoryModel.CreatedDate,
-                Email = respositoryModel.Email,
-                Id = respositoryModel.Id,
-                Name = respositoryModel.Name,
-                Notes = respositoryModel.Notes,
-                PhoneNumber = respositoryModel.PhoneNumber,
-                PhoneType = respositoryModel.PhoneType
-            };
-
-            return contactModel;
+            return mapper.Map<ContactModel>(respositoryModel);
         }
     }
 }

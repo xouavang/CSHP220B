@@ -1,0 +1,21 @@
+﻿<Window x:Class="HelloWorld.ListBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloWorld"
+        mc:Ignorable="d"
+        Title="ListBoxWindow" Height="450" Width="800">
+    <DockPanel>
+        <ListBox x:Name="uxCurrentList" DockPanel.Dock="Left" Width="100" Background="Aqua"
+         SelectionChanged="uxCurrentList_SelectionChanged"/>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <Button x:Name="uxDelete" IsEnabled="False" Content="Delete >>" Click="uxDelete_Click"/>
+            <Button x:Name="uxRemove" IsEnabled="False" Content="&lt;&lt; Remove" Click="uxRemove_Click"/>
+            <Button x:Name="uxApply" Content="Apply" Click="uxApply_Click"/>
+        </StackPanel>
+        <ListBox x:Name="uxRemoveList" DockPanel.Dock="Right" Width="100" Background="Pink"
+       SelectionChanged="uxRemoveList_SelectionChanged"/>
+    </DockPanel>
+
+</Window>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="HelloWorld.TabControlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloWorld"
+        mc:Ignorable="d"
+        Title="TabControlWindow" Height="450" Width="800">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Margin="10,0,10,2">
+            <Button x:Name="uxPrevious" Click="uxPrevious_Click">Previous</Button>
+            <Button x:Name="uxNext" Click="uxNext_Click" DockPanel.Dock="Right">Next</Button>
+        </DockPanel>
+        <TabControl x:Name="uxTab" DockPanel.Dock="Top">
+            <TabItem Header="First">
+                <StackPanel x:Name="uxFirstStackPanel">
+                    <TextBlock Text="Name:"/>
+                    <TextBox></TextBox>
+                    <TextBlock Text="Phone Number:"/>
+                    <TextBox></TextBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Second">
+                <Canvas Height="{Binding ElementName=uxFirstStackPanel,Path=ActualHeight}">
+                    <Ellipse Canvas.Top="10" Canvas.Left="10" Height="50" Width="50" Fill="Blue" />
+                </Canvas>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Green" Foreground="Green" />
+                </TabItem.Header>
+            </TabItem>
+            <TabItem Header="Fourth and long"></TabItem>
+            <TabItem Header="Really long title"></TabItem>
+        </TabControl>
+    </DockPanel>
+
+</Window>

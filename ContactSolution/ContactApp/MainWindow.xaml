@@ -10,11 +10,11 @@
         <Menu>
             <MenuItem x:Name="File" Header="_File">
                 <MenuItem x:Name="uxFileNew" Header="_New" Click="uxFileNew_Click"/>
-                <MenuItem x:Name="uxFileDelete" Header="_Delete" Click="uxFileDelete_Click" Loaded="uxFileDelete_Loaded" />
                 <MenuItem x:Name="uxFileChange" Header="_Modify" Click="uxFileChange_Click" Loaded="uxFileChange_Loaded" />
+                <MenuItem x:Name="uxFileDelete" Header="_Delete" Click="uxFileDelete_Click" Loaded="uxFileDelete_Loaded" />
             </MenuItem>
         </Menu>
-        <ListView x:Name="uxContactList" Height="200" SelectionChanged="uxContactList_SelectionChanged">
+        <ListView x:Name="uxContactList" Height="200" SelectionChanged="uxContactList_SelectionChanged" MouseDoubleClick="uxContactList_MouseDoubleClick">
             <ListView.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="uxContextFileNew" Header="_New" Click="uxFileNew_Click"/>

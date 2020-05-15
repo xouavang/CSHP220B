@@ -94,8 +94,13 @@ namespace ContactApp
 
         private void uxFileChange_Click(object sender, RoutedEventArgs e)
         {
+            EditContact();
+        }
+
+        private void EditContact()
+        {
             var window = new ContactWindow();
-            window.Contact = selectedContact;
+            window.Contact = selectedContact.Clone();
 
             if (window.ShowDialog() == true)
             {
@@ -128,6 +133,11 @@ namespace ContactApp
         {
             uxFileDelete.IsEnabled = (selectedContact != null);
             uxContextFileDelete.IsEnabled = uxFileDelete.IsEnabled;
+        }
+
+        private void uxContactList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            EditContact();
         }
     }
 }
