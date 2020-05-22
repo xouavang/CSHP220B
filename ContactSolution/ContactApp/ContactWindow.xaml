@@ -24,7 +24,10 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right">Name:</TextBlock>
-        <TextBox x:Name="uxName" Grid.Column="1" Grid.Row="0" Text="{Binding Name}"></TextBox>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+            <TextBox x:Name="uxName" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
+            <TextBox x:Name="uxNameError" Text="{Binding NameError, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
 
         <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Email:</TextBlock>
         <TextBox x:Name="uxEmail" Grid.Column="1" Grid.Row="1" Text="{Binding Email}"></TextBox>
