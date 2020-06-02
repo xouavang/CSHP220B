@@ -15,6 +15,8 @@ namespace HelloWorld
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IProductRepository, ProductRepository>();
+
             services
             // Add FULL MVC handling (Do not call AddMvcCore(), this will only add the minimum to get MVC to work, which is not what we want)
             .AddMvc()
@@ -29,6 +31,8 @@ namespace HelloWorld
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseStaticFiles(); // Add this to allow ASP.NET to download additional file (Style.css). By default ASP.NET does not download additional file.
 
             app.UseMvc(routes =>
             {

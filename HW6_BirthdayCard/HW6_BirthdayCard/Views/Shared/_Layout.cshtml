@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - BirthdayCard</title>
+</head>
+<body>
+    <header style="background-color:black;color:lightgrey">
+        <h3>Birthday Card Generator</h3>
+    </header>
+
+    <div class="container-fluid body-content ">
+        @RenderBody()
+
+    </div>
+
+    <footer>
+        <hr />
+        <p>&copy;@DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</body>
+</html>

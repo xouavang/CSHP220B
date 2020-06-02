@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW6_BirthdayCard", "HW6_BirthdayCard\HW6_BirthdayCard.csproj", "{6A67096A-8605-44B4-A39D-A884C949BEFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A67096A-8605-44B4-A39D-A884C949BEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A67096A-8605-44B4-A39D-A884C949BEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A67096A-8605-44B4-A39D-A884C949BEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A67096A-8605-44B4-A39D-A884C949BEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64297772-DE80-436A-AF0D-A18067BAA97F}
+	EndGlobalSection
+EndGlobal

@@ -1,20 +1,38 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
-    <b>Hello World!!!</b>
-    @for (int i = 0; i < 10; i++)
-    {
-        <b>You are on page @i</b><br/>
-    }
+    <div class="text-center">
+        <h2>The party is tonight.</h2>
+        <h3>And you're invited</h3>
+
+        <div class="btn btn-success">
+            @Html.ActionLink("RSVP Now", "RsvpForm")
+        </div>
+        <div class="btn btn-success">
+            @Html.ActionLink("Go to Product", "Product")
+        </div>
+        <div class="btn btn-success">
+            @Html.ActionLink("Go to Products", "Products")
+        </div>
+    </div>
 </body>
 </html>
