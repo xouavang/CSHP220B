@@ -22,6 +22,16 @@
 <body>
     <div class="text-center">
         <h2>The party is tonight.</h2>
+
+        <partial name="IncrementCount" />
+
+        @*@Html.ActionLink("Log In", "Login")
+        @Html.ActionLink("Log Off", "Logoff")*@
+        <a asp-action="Login">Log In</a>
+        <a asp-action="Logoff">Log Off</a>
+
+        <partial name="DisplayLoginName" />
+
         <h3>And you're invited</h3>
 
         <div class="btn btn-success">
@@ -32,6 +42,12 @@
         </div>
         <div class="btn btn-success">
             @Html.ActionLink("Go to Products", "Products")
+        </div>
+        <div class="btn btn-success">
+            <a asp-action="Notes">Notes</a>
+        </div>
+        <div class="btn btn-success">
+            <a asp-action="Logout" asp-controller="account">Log Off</a>
         </div>
     </div>
 </body>

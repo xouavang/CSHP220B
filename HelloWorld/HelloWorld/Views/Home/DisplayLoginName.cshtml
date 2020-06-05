@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@if (!string.IsNullOrEmpty(Context.Session.GetString("UserName")))
+{
+        <p>Logged in: @Context.Session.GetString("UserName")</p>
+}
+
